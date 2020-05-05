@@ -238,7 +238,7 @@ SLAMR.videoBgYT = function(selector,video){
 	if(!Modernizr.touch){
 		$(selector).tubular({videoId:video,wrapperZIndex: 9999}); 	
 	}else{
-		$(selector).html("<img src='img/bg-head-1.jpg' alt='' />");
+		$(selector).html("<img src='img/bg-standup-paddle.jpg' alt='' />");
 	};
 	 
 };
