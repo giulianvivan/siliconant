@@ -1,0 +1,18 @@
+# Schema documented at https://render.com/docs/yaml-spec
+
+services:
+  - type: web
+    name: siliconant
+    env: python
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic && python manage.py makemigrations && python manage.py migrate"
+    startCommand: "gunicorn siliconant.wsgi"
+    plan: free
+    numInstances: 1
+    domains: # custom domains
+      - 'www.siliconant.com'
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
+
